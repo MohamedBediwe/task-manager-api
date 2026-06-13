@@ -37,7 +37,7 @@ export const register = async (
 
     // Generate JWT
     const token = jwt.sign(
-      { userId: user._id } as JwtPayload,
+      { userId: user._id.toString() } as JwtPayload,
       process.env.JWT_SECRET!,
       { expiresIn: '7d' }
     );
@@ -89,7 +89,7 @@ export const login = async (
 
     // Generate JWT
     const token = jwt.sign(
-      { userId: user._id } as JwtPayload,
+      { userId: user._id.toString() } as JwtPayload,
       process.env.JWT_SECRET!,
       { expiresIn: '7d' }
     );
